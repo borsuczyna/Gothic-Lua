@@ -1,0 +1,12 @@
+﻿  FileVersion", "1.0.0.15"
+  ProductVersion", "1.0.0.15"
+  FILEVERSION 1,0,0,15
+  PRODUCTVERSION 1,0,0,15
+  ------ 
+  Interface.cpp
+  Trwa generowanie kodu
+  161 of 192 functions (83.9%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Zakończono generowanie kodu
+  GLua.vcxproj -> F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\GLua.dll
