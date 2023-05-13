@@ -5,6 +5,10 @@
 #pragma region Includes
 #include "zKeyboard.cpp"
 #include "zWindow.cpp"
+#include "Global.cpp"
+#include "DirectX11.cpp"
+#include "zRender.cpp"
+#include "zCursor.cpp"
 #include "Plugin.cpp"
 #pragma endregion
 

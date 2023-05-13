@@ -220,6 +220,21 @@
     <Filter Include="Plugin\Workspace\Plugin\zWindow">
       <UniqueIdentifier>{12d09b22-83cf-4e7a-acd8-f59275b6b63e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zRender">
+      <UniqueIdentifier>{c424708e-f373-471a-abc1-782b32106d12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zRender\MinHook">
+      <UniqueIdentifier>{d93b965b-3ef8-4b5e-9a91-397ae020826a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zRender\MinHook\hde">
+      <UniqueIdentifier>{2e2239d7-8b0a-4af8-9aa4-6da29e45ddc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zRender\ImGui">
+      <UniqueIdentifier>{e7f58456-72a1-436f-b4b5-014d9b790598}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zCursor">
+      <UniqueIdentifier>{ec4402c1-b52c-4f6a-8046-269003f9145c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Interface.cpp">
@@ -263,6 +278,51 @@
     </ClCompile>
     <ClCompile Include="ZenGin\Gothic_II_Addon\Statics_G2A.cpp">
       <Filter>Engine SDK\4. Gothic II NoTR\Overloads</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\MinHook\Src\hde\hde32.c">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\MinHook\Src\hde\hde64.c">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\MinHook\Src\buffer.c">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\MinHook\Src\hook.c">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\MinHook\Src\trampoline.c">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_demo.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_draw.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx9.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx10.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx11.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx12.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_impl_win32.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_tables.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Directories\ImGui\imgui_widgets.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2789,6 +2849,78 @@
     </ClInclude>
     <ClInclude Include="zWindow.cpp">
       <Filter>Plugin\Workspace\Plugin\zWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="zRender.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\hde\hde32.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\hde\hde64.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\hde\pstdint.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\hde\table32.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\hde\table64.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\buffer.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Src\trampoline.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\MinHook\Include\MinHook.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imconfig.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx9.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx10.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx11.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx12.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui_impl_win32.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imgui_internal.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imstb_rectpack.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imstb_textedit.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Directories\ImGui\imstb_truetype.h">
+      <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Global.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX11.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="zRender.h">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="zCursor.cpp">
+      <Filter>Plugin\Workspace\Plugin\zCursor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -262,118 +262,117 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MP x4 Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MP x2 Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G2A Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G2 Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G1A Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G1 Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MP x4 MD Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MP x4 MT Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MP x2 MD Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MP x2 MT Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G2A MD Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G2A MT Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
     <TargetName>$(ProjectName)</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G2 MD Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G2 MT Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G1A MD Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G1A MT Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G1 MD Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='G1 MT Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\</OutDir>
-    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath)</LibraryPath>
+    <OutDir>F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\</OutDir>
+    <IncludePath>$(ProjectDir)\;$(ProjectDir)\ZenGin\Gothic_UserAPI\;$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Include\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\include\;$(IncludePath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</IncludePath>
+    <LibraryPath>$(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Lib\;$(ALLUSERSPROFILE)\Union\SDK\DirectX7\Lib\;$(LibraryPath);$(DXSDK_DIR)LIB\x86;$(DXSDK_DIR)include</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MP x4 Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GOTHICPLUGIN_EXPORTS;__G1;__G1A;__G2;__G2A;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -397,8 +396,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MP x2 Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GOTHICPLUGIN_EXPORTS;__G1;__G2A;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -422,8 +420,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G2A Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GOTHICPLUGIN_EXPORTS;__G2A;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -447,8 +444,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G2 Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GOTHICPLUGIN_EXPORTS;__G2;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -472,8 +468,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G1A Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GOTHICPLUGIN_EXPORTS;__G1A;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -497,8 +492,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G1 Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GOTHICPLUGIN_EXPORTS;__G1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -523,8 +517,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MP x4 MD Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -552,8 +545,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MP x4 MT Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -581,8 +573,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MP x2 MD Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -610,8 +601,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MP x2 MT Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -639,8 +629,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G2A MD Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -668,8 +657,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G2A MT Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -697,8 +685,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G2 MD Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -726,8 +713,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G2 MT Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -755,8 +741,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G1A MD Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -784,8 +769,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G1A MT Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -813,8 +797,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G1 MD Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -842,8 +825,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='G1 MT Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -869,7 +851,49 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Directories\ImGui\imgui.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx10.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx12.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_impl_dx9.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="Directories\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="Directories\MinHook\Src\buffer.c" />
+    <ClCompile Include="Directories\MinHook\Src\hde\hde32.c" />
+    <ClCompile Include="Directories\MinHook\Src\hde\hde64.c" />
+    <ClCompile Include="Directories\MinHook\Src\hook.c" />
+    <ClCompile Include="Directories\MinHook\Src\trampoline.c" />
     <ClCompile Include="DllMain.cpp" />
+    <ClInclude Include="Directories\ImGui\imconfig.h" />
+    <ClInclude Include="Directories\ImGui\imgui.h" />
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx10.h" />
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx12.h" />
+    <ClInclude Include="Directories\ImGui\imgui_impl_dx9.h" />
+    <ClInclude Include="Directories\ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="Directories\ImGui\imgui_internal.h" />
+    <ClInclude Include="Directories\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="Directories\ImGui\imstb_textedit.h" />
+    <ClInclude Include="Directories\ImGui\imstb_truetype.h" />
+    <ClInclude Include="Directories\MinHook\Include\MinHook.h" />
+    <ClInclude Include="Directories\MinHook\Src\buffer.h" />
+    <ClInclude Include="Directories\MinHook\Src\hde\hde32.h" />
+    <ClInclude Include="Directories\MinHook\Src\hde\hde64.h" />
+    <ClInclude Include="Directories\MinHook\Src\hde\pstdint.h" />
+    <ClInclude Include="Directories\MinHook\Src\hde\table32.h" />
+    <ClInclude Include="Directories\MinHook\Src\hde\table64.h" />
+    <ClInclude Include="Directories\MinHook\Src\trampoline.h" />
+    <ClInclude Include="DirectX11.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Global.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Plugin.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="ZenGin\Gothic_II_Addon\ClassDeclarators_G2A.cpp" />
@@ -884,7 +908,19 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
     <ClCompile Include="ZenGin\Gothic_I_Classic\ClassDeclarators_G1.cpp" />
     <ClCompile Include="ZenGin\Gothic_I_Classic\Globals_G1.cpp" />
     <ClCompile Include="ZenGin\Gothic_I_Classic\Statics_G1.cpp" />
+    <ClInclude Include="zCursor.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="zKeyboard.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="zRender.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="zRender.h">
       <SubType>
       </SubType>
     </ClInclude>

@@ -1,10 +1,11 @@
 LONG_PTR dwStyle;
 bool windowedModeInitialized = false;
 
-int resolutions[3][2] = {
+int resolutions[4][2] = {
 	{800, 600},
 	{1024, 768},
-	{1280, 720}
+	{1280, 720},
+	{1920, 1080},
 };
 int currentResolution = 0;
 
@@ -59,6 +60,11 @@ namespace GOTHIC_ENGINE {
 			int x = (GetSystemMetrics(SM_CXSCREEN) - width) / 2;
 			int y = (GetSystemMetrics(SM_CYSCREEN) - height) / 2;
 
+			zCView::SetMode(width, height, 32, &hWnd);
+			zCPosition pos = zCPosition();
+			pos.X = 8192;
+			pos.Y = 8192;
+			zCViewDraw::GetScreen().SetVirtualSize(pos);
 			SetWindowPos(hWnd, NULL, x, y, width, height, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
 		}
 
@@ -66,7 +72,7 @@ namespace GOTHIC_ENGINE {
 			if (!windowedModeInitialized) return InitWindowed();
 			if (!(zKeyboard::IsKeyDown(VK_CONTROL) && zKeyboard::WasKeyPressed('L'))) return;
 
-			currentResolution = (currentResolution + 1) % 3;
+			currentResolution = (currentResolution + 1) % 4;
 			SetSize(resolutions[currentResolution][0], resolutions[currentResolution][1]);
 
 			printf("changed resolution\n");
