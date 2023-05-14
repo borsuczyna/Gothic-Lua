@@ -1,11 +1,11 @@
-﻿  FileVersion", "1.0.0.180"
-  ProductVersion", "1.0.0.180"
-  FILEVERSION 1,0,0,180
-  PRODUCTVERSION 1,0,0,180
+﻿  FileVersion", "1.0.0.230"
+  ProductVersion", "1.0.0.230"
+  FILEVERSION 1,0,0,230
+  PRODUCTVERSION 1,0,0,230
   ------ 
   Interface.cpp
   Generating code
-  179 of 2115 functions ( 8.5%) were compiled, the rest were copied from previous compilation.
+  5 of 2132 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     72 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

@@ -2922,6 +2922,9 @@
     <ClInclude Include="zCursor.cpp">
       <Filter>Plugin\Workspace\Plugin\zCursor</Filter>
     </ClInclude>
+    <ClInclude Include="DirectX9.cpp">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".build_settings.inl">

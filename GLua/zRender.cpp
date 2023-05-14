@@ -1,4 +1,5 @@
 #include "zRender.h"
+#include <Directories/ImGui/imgui_impl_dx9.h>
 
 #define MAX_DRAW_QUEUE 1024
 
@@ -60,6 +61,7 @@ namespace GOTHIC_ENGINE {
 				ImVec2 end(rectangle.x + rectangle.w, rectangle.y + rectangle.h);
 
 				drawList->AddRectFilled(start, end, rectangle.color);
+				printf("rectangle: %f, %f, %f, %f\n", start.x, start.y, end.x, end.y);
 				rectangleQueue[i].inUse = false;
 			}
 		}
@@ -74,6 +76,77 @@ namespace GOTHIC_ENGINE {
 		MEMORY_BASIC_INFORMATION info;
 		size_t len = VirtualQueryEx(GetCurrentProcess(), (void*)GetThisDllHandle, &info, sizeof(info));
 		return len ? (HMODULE)info.AllocationBase : NULL;
+	}
+
+	HRESULT APIENTRY MJEndSceneDX9(IDirect3DDevice9* pDevice) {
+		if (!ImGui_Initialised) {
+			ImGui::CreateContext();
+
+			ImGuiIO& io = ImGui::GetIO(); (void)io;
+			ImGui::GetIO().WantCaptureMouse || ImGui::GetIO().WantTextInput || ImGui::GetIO().WantCaptureKeyboard;
+			io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
+
+			ImGui_ImplWin32_Init(Process::Hwnd);
+			ImGui_ImplDX9_Init(pDevice);
+			ImGui_ImplDX9_CreateDeviceObjects();
+			ImGui::GetIO().ImeWindowHandle = Process::Hwnd;
+			Process::WndProc = (WNDPROC)SetWindowLongPtr(Process::Hwnd, GWLP_WNDPROC, (__int3264)(LONG_PTR)WndProc);
+			ImGui_Initialised = true;
+		}
+
+		ImGui_ImplDX9_NewFrame();
+		ImGui_ImplWin32_NewFrame();
+		ImGui::NewFrame();
+		ImGui::GetIO().MouseDrawCursor = true;
+		ImGui::ShowDemoWindow();
+
+		DrawQueuedElements();
+
+		ImGui::EndFrame();
+		ImGui::Render();
+		ImGui_ImplDX9_RenderDrawData(ImGui::GetDrawData());
+
+		return oEndScene(pDevice);
+	}
+
+	static HRESULT APIENTRY MJPresentDX9(IDirect3DDevice9* pDevice, const RECT* pSourceRect, const RECT* pDestRect, HWND hDestWindowOverride, const RGNDATA* pDirtyRegion) {
+		return oPresent(pDevice, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
+	}
+
+	static HRESULT APIENTRY MJDrawIndexedPrimitiveDX9(IDirect3DDevice9* pDevice, D3DPRIMITIVETYPE Type, INT BaseVertexIndex, UINT MinVertexIndex, UINT NumVertices, UINT startIndex, UINT primCount) {
+		return oDrawIndexedPrimitive(pDevice, Type, BaseVertexIndex, MinVertexIndex, NumVertices, startIndex, primCount);
+	}
+
+	static HRESULT APIENTRY MJDrawPrimitiveDX9(IDirect3DDevice9* pDevice, D3DPRIMITIVETYPE PrimitiveType, UINT StartVertex, UINT PrimitiveCount) {
+		return oDrawPrimitive(pDevice, PrimitiveType, StartVertex, PrimitiveCount);
+	}
+
+	static HRESULT APIENTRY MJSetTextureDX9(LPDIRECT3DDEVICE9 pDevice, DWORD Sampler, IDirect3DBaseTexture9* pTexture) {
+		return oSetTexture(pDevice, Sampler, pTexture);
+	}
+
+	static HRESULT APIENTRY MJResetDX9(IDirect3DDevice9* pDevice, D3DPRESENT_PARAMETERS* pPresentationParameters) {
+		return oReset(pDevice, pPresentationParameters);;
+	}
+
+	static HRESULT APIENTRY MJSetStreamSourceDX9(LPDIRECT3DDEVICE9 pDevice, UINT StreamNumber, IDirect3DVertexBuffer9* pStreamData, UINT OffsetInBytes, UINT sStride) {
+		return oSetStreamSource(pDevice, StreamNumber, pStreamData, OffsetInBytes, sStride);
+	}
+
+	static HRESULT APIENTRY MJSetVertexDeclarationDX9(LPDIRECT3DDEVICE9 pDevice, IDirect3DVertexDeclaration9* pdecl) {
+		return oSetVertexDeclaration(pDevice, pdecl);
+	}
+
+	static HRESULT APIENTRY MJSetVertexShaderConstantFDX9(LPDIRECT3DDEVICE9 pDevice, UINT StartRegister, const float* pConstantData, UINT Vector4fCount) {
+		return oSetVertexShaderConstantF(pDevice, StartRegister, pConstantData, Vector4fCount);
+	}
+
+	static HRESULT APIENTRY MJSetVertexShaderDX9(LPDIRECT3DDEVICE9 pDevice, IDirect3DVertexShader9* veShader) {
+		return oSetVertexShader(pDevice, veShader);
+	}
+
+	static HRESULT APIENTRY MJSetPixelShaderDX9(LPDIRECT3DDEVICE9 pDevice, IDirect3DPixelShader9* piShader) {
+		return oSetPixelShader(pDevice, piShader);
 	}
 
 	static HRESULT APIENTRY MJPresent(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags) {
@@ -156,12 +229,25 @@ namespace GOTHIC_ENGINE {
 			if (DXVersion == DirectXVersion.D3D11) {
 				if (DirectX11::Init() == true) {
 					RenderHook::CreateHook(8, (void**)&oIDXGISwapChainPresent, MJPresent);
-					RenderHook::CreateHook(12, (void**)&oID3D11DrawIndexed, MJDrawIndexed);
+					//RenderHook::CreateHook(12, (void**)&oID3D11DrawIndexed, MJDrawIndexed);
 					InitHook = true;
 				}
 			}
-			else if (DXVersion == DirectXVersion.D3D7) {
-				printf("waiting for dx7...\n");
+			else if (DXVersion == DirectXVersion.D3D9) {
+				if (DirectX9::Init() == true) {
+					RenderHook::CreateHook(42, (void**)&oEndScene, MJEndSceneDX9);
+					RenderHook::CreateHook(17, (void**)&oPresent, MJPresentDX9);
+					RenderHook::CreateHook(82, (void**)&oDrawIndexedPrimitive, MJDrawIndexedPrimitiveDX9);
+					RenderHook::CreateHook(81, (void**)&oDrawPrimitive, MJDrawPrimitiveDX9);
+					RenderHook::CreateHook(65, (void**)&oSetTexture, MJSetTextureDX9);
+					RenderHook::CreateHook(16, (void**)&oReset, MJResetDX9);
+					RenderHook::CreateHook(100, (void**)&oSetStreamSource, MJSetStreamSourceDX9);
+					RenderHook::CreateHook(87, (void**)&oSetVertexDeclaration, MJSetVertexDeclarationDX9);
+					RenderHook::CreateHook(94, (void**)&oSetVertexShaderConstantF, MJSetVertexShaderConstantFDX9);
+					RenderHook::CreateHook(92, (void**)&oSetVertexShader, MJSetVertexShaderDX9);
+					RenderHook::CreateHook(107, (void**)&oSetPixelShader, MJSetPixelShaderDX9);
+					InitHook = true;
+				}
 			}
 		}
 		return 0;
@@ -172,8 +258,11 @@ namespace GOTHIC_ENGINE {
 		if (DXVersion == DirectXVersion.D3D11) {
 			printf("hooking to dx11...\n");
 		}
-		else if (DXVersion == DirectXVersion.D3D7) {
-			printf("hooking to dx7...\n");
+		else if (DXVersion == DirectXVersion.D3D9) {
+			printf("hooking to dx9...\n");
+		}
+		else {
+			MessageBoxA(zWindow::GetGothicWindow(), "error", "directx version not supported, install dx11 or gothic-legacyaltrenderer", MB_OK);
 		}
 
 		initializedRender = true;

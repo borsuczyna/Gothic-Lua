@@ -7,6 +7,7 @@
 #include "zWindow.cpp"
 #include "RenderHook.cpp"
 #include "DirectX11.cpp"
+#include "DirectX9.cpp"
 #include "zRender.cpp"
 #include "zCursor.cpp"
 #include "Plugin.cpp"

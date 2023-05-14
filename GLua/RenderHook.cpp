@@ -11,7 +11,8 @@ static uintx_t* MethodsTable = NULL;
 struct _DirectXVersion {
 	int Unknown = 0;
 	int D3D7 = 1;
-	int D3D11 = 2;
+	int D3D9 = 2;
+	int D3D11 = 3;
 } DirectXVersion;
 
 WNDCLASSEX WindowClass;
@@ -22,7 +23,7 @@ namespace GOTHIC_ENGINE {
 	public:
 		static int GetDirectXVersion() {
 			if (GetModuleHandle("AntTweakBar.dll") != NULL) return DirectXVersion.D3D11;
-			if (GetModuleHandle("ddraw.dll") != NULL) return DirectXVersion.D3D7;
+			if (GetModuleHandle("d3d9.dll") != NULL) return DirectXVersion.D3D9;
 			return DirectXVersion.Unknown;
 		}
 
@@ -55,7 +56,7 @@ namespace GOTHIC_ENGINE {
 			}
 			return true;
 		}
-
+		
 		static bool CreateHook(uint16_t Index, void** Original, void* Function) {
 			assert(Index >= 0 && Original != NULL && Function != NULL);
 			void* target = (void*)MethodsTable[Index];
