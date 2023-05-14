@@ -6,6 +6,8 @@ bool ShowMenu = false;
 bool ImGui_Initialised = false;
 bool initializedRender = false;
 
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 namespace Process {
 	DWORD ID;
 	HANDLE Handle;
@@ -25,16 +27,10 @@ namespace DirectX11Interface {
 	ID3D11RenderTargetView* RenderTargetView;
 }
 
-extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
-static LRESULT APIENTRY WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
-	if (ShowMenu) {
-		ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam);
-		return true;
-	}
-	return CallWindowProc(Process::WndProc, hwnd, uMsg, wParam, lParam);
-}
 
 namespace GOTHIC_ENGINE {
+	int DXVersion = DirectXVersion.Unknown;
+
 	// queue
 	struct Rectangle {
 		float x;
@@ -44,6 +40,13 @@ namespace GOTHIC_ENGINE {
 		ImColor color;
 		bool inUse;
 	};
+
+	static LRESULT APIENTRY WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+		ImGui_ImplWin32_WndProcHandler(hwnd, uMsg, wParam, lParam);
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDown[0] = zinput->GetMouseButtonPressedLeft();
+		return CallWindowProc(Process::WndProc, hwnd, uMsg, wParam, lParam);
+	}
 
 	Rectangle rectangleQueue[MAX_DRAW_QUEUE] = {};
 
@@ -101,7 +104,7 @@ namespace GOTHIC_ENGINE {
 				ImGui_Initialised = true;
 			}
 		}
-		if (GetAsyncKeyState(VK_INSERT) & 1) ShowMenu = !ShowMenu;
+
 		ImGui_ImplDX11_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
@@ -150,26 +153,38 @@ namespace GOTHIC_ENGINE {
 		}
 		bool InitHook = false;
 		while (InitHook == false) {
-			if (DirectX11::Init() == true) {
-				Global::CreateHook(8, (void**)&oIDXGISwapChainPresent, MJPresent);
-				Global::CreateHook(12, (void**)&oID3D11DrawIndexed, MJDrawIndexed);
-				InitHook = true;
+			if (DXVersion == DirectXVersion.D3D11) {
+				if (DirectX11::Init() == true) {
+					RenderHook::CreateHook(8, (void**)&oIDXGISwapChainPresent, MJPresent);
+					RenderHook::CreateHook(12, (void**)&oID3D11DrawIndexed, MJDrawIndexed);
+					InitHook = true;
+				}
+			}
+			else if (DXVersion == DirectXVersion.D3D7) {
+				printf("waiting for dx7...\n");
 			}
 		}
 		return 0;
 	}
 
+	static void InitRender() {
+		DXVersion = RenderHook::GetDirectXVersion();
+		if (DXVersion == DirectXVersion.D3D11) {
+			printf("hooking to dx11...\n");
+		}
+		else if (DXVersion == DirectXVersion.D3D7) {
+			printf("hooking to dx7...\n");
+		}
+
+		initializedRender = true;
+		Process::Module = GetThisDllHandle();
+		CreateThread(0, 0, MainThread, 0, 0, 0);
+	}
+
 	class zRender {
 	public:
 		static void Update() {
-			if (initializedRender) return;
-			HMODULE hModule = GetThisDllHandle();
-			if (Global::ChecktDirectXVersion(DirectXVersion.D3D9) == true) {
-				initializedRender = true;
-				Process::Module = hModule;
-				printf("starting hooking to dx11\n");
-				CreateThread(0, 0, MainThread, 0, 0, 0);
-			}
+			if (!initializedRender) return InitRender();
 		}
 
 		static void DrawRectangle(float x, float y, float w, float h, ImColor color = ImColor(255, 255, 255)) {

@@ -10,44 +10,20 @@ static uintx_t* MethodsTable = NULL;
 
 struct _DirectXVersion {
 	int Unknown = 0;
-	int D3D9 = 1;
-	int D3D10 = 2;
-	int D3D11 = 3;
-	int D3D12 = 4;
-}DirectXVersion;
+	int D3D7 = 1;
+	int D3D11 = 2;
+} DirectXVersion;
 
 WNDCLASSEX WindowClass;
 HWND WindowHwnd;
 
 namespace GOTHIC_ENGINE {
-	class Global {
+	class RenderHook {
 	public:
-		static bool ChecktDirectXVersion(int _DirectXVersion) {
-			if (_DirectXVersion = DirectXVersion.D3D12) {
-				if (GetModuleHandle("d3d12.dll") != NULL) {
-					return true;
-				}
-			}
-
-			if (_DirectXVersion = DirectXVersion.D3D11) {
-				if (GetModuleHandle("d3d11.dll") != NULL) {
-					return true;
-				}
-			}
-
-			if (_DirectXVersion = DirectXVersion.D3D10) {
-				if (GetModuleHandle("d3d10.dll") != NULL) {
-					return true;
-				}
-			}
-
-			if (_DirectXVersion = DirectXVersion.D3D9) {
-				if (GetModuleHandle("d3d9.dll") != NULL) {
-					return true;
-				}
-			}
-
-			return false;
+		static int GetDirectXVersion() {
+			if (GetModuleHandle("AntTweakBar.dll") != NULL) return DirectXVersion.D3D11;
+			if (GetModuleHandle("ddraw.dll") != NULL) return DirectXVersion.D3D7;
+			return DirectXVersion.Unknown;
 		}
 
 		static bool InitWindow() {

@@ -28,12 +28,20 @@ namespace GOTHIC_ENGINE {
 			GetClientRect(hWnd, &rcClient);
 			AdjustWindowRect(&rcClient, dwStyle, FALSE);
 
-			zWindow::SetSize(1280, 720);
+			zWindow::SetSize(1920, 1080);
 			ogame->UpdateScreenResolution();
 
 			windowedModeInitialized = true;
 		}
 	public:
+		static bool isFullscreen()
+		{
+			HWND hwnd = GetGothicWindow();
+			RECT windowRect;
+			GetClientRect(hwnd, &windowRect);
+			return windowRect.left == 0 && windowRect.top == 0 && windowRect.right == GetSystemMetrics(SM_CXSCREEN) && windowRect.bottom == GetSystemMetrics(SM_CYSCREEN);
+		}
+
 		static bool IsGothicFocused() {
 			HWND hWnd = GetForegroundWindow();
 			if (hWnd == NULL) return false;
@@ -49,7 +57,7 @@ namespace GOTHIC_ENGINE {
 		static HWND GetGothicWindow() {
 			if (!zWindow::IsGothicFocused()) return (HWND)-1;
 			HWND hWnd = GetForegroundWindow();
-
+			 
 			return hWnd;
 		}
 

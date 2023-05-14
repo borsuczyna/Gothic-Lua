@@ -19,7 +19,7 @@ namespace GOTHIC_ENGINE {
 		}
 
 		static void Update() {
-			if (!visible) return;
+			if (!visible || !zWindow::IsGothicFocused()) return;
 
 			float vx, vy, vz;
 			zinput->GetMousePos(vx, vy, vz);
@@ -27,10 +27,14 @@ namespace GOTHIC_ENGINE {
 			screen->GetViewport(px, py, width, height);
 			x = clamp(x + vx, 0, float(width));
 			y = clamp(y + vy, 0, float(height));
+			RECT rect, crect;
+			GetWindowRect(zWindow::GetGothicWindow(), &rect);
+			GetClientRect(zWindow::GetGothicWindow(), &crect);
 
 			zRender::DrawRectangle(x, y, 50, 50);
 
-			SetCursorPos(int(x), int(y));
+			bool isDullscreen = zWindow::isFullscreen();
+			SetCursorPos(int(x) + rect.left + (isDullscreen ? 0 : 8), int(y) + rect.top + (isDullscreen ? 0 : 31));
 		}
 	};
 }

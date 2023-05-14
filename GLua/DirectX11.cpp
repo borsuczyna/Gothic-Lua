@@ -1,20 +1,22 @@
+#include <d3d11.h>
+
 namespace GOTHIC_ENGINE {
 	class DirectX11 {
 	public:
 		static bool Init() {
-			if (Global::InitWindow() == false) {
+			if (RenderHook::InitWindow() == false) {
 				return false;
 			}
 
 			HMODULE D3D11Module = GetModuleHandle("d3d11.dll");
 			if (D3D11Module == NULL) {
-				Global::DeleteWindow();
+				RenderHook::DeleteWindow();
 				return false;
 			}
 
 			void* D3D11CreateDeviceAndSwapChain = GetProcAddress(D3D11Module, "D3D11CreateDeviceAndSwapChain");
 			if (D3D11CreateDeviceAndSwapChain == NULL) {
-				Global::DeleteWindow();
+				RenderHook::DeleteWindow();
 				return false;
 			}
 
@@ -65,7 +67,7 @@ namespace GOTHIC_ENGINE {
 				D3D_FEATURE_LEVEL*,
 				ID3D11DeviceContext**))(D3D11CreateDeviceAndSwapChain))(NULL, D3D_DRIVER_TYPE_HARDWARE, NULL, 0, FeatureLevels, 1, D3D11_SDK_VERSION, &SwapChainDesc, &SwapChain, &Device, &FeatureLevel, &Context) < 0)
 			{
-				Global::DeleteWindow();
+				RenderHook::DeleteWindow();
 				return false;
 			}
 
@@ -81,7 +83,7 @@ namespace GOTHIC_ENGINE {
 			Device = NULL;
 			Context->Release();
 			Context = NULL;
-			Global::DeleteWindow();
+			RenderHook::DeleteWindow();
 			return true;
 		}
 	};

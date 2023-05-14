@@ -2910,7 +2910,7 @@
     <ClInclude Include="Directories\ImGui\imstb_truetype.h">
       <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="Global.cpp">
+    <ClInclude Include="RenderHook.cpp">
       <Filter>Plugin\Workspace\Plugin\zRender</Filter>
     </ClInclude>
     <ClInclude Include="DirectX11.cpp">
