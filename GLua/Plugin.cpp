@@ -7,17 +7,24 @@ namespace GOTHIC_ENGINE {
     // TO DO
     // Your code ...
 
-    void Game_Entry() {
-        AllocConsole();
-        freopen("CONOUT$", "w", stdout);
+    void Main_Init() {
         zCursor::SetVisible(true);
+        zConsole::Init();
     }
 
     void Main_Loop() {
         zKeyboard::Update();
         zWindow::Update();
-        zRender::Update();
         zCursor::Update();
+        zConsole::Update();
+        zRender::Update();
+    }
+
+    void Game_Entry() {
+        AllocConsole();
+        freopen("CONOUT$", "w", stdout);
+        
+        Main_Init();
     }
     
     void Game_Init() {

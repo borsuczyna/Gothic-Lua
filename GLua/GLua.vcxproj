@@ -912,7 +912,15 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
     <ClCompile Include="ZenGin\Gothic_I_Classic\ClassDeclarators_G1.cpp" />
     <ClCompile Include="ZenGin\Gothic_I_Classic\Globals_G1.cpp" />
     <ClCompile Include="ZenGin\Gothic_I_Classic\Statics_G1.cpp" />
+    <ClInclude Include="zConsole.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="zCursor.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="zEvents.cpp">
       <SubType>
       </SubType>
     </ClInclude>

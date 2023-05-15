@@ -3,6 +3,7 @@
 
 // Automatically generated block
 #pragma region Includes
+#include "zEvents.cpp"
 #include "zKeyboard.cpp"
 #include "zWindow.cpp"
 #include "RenderHook.cpp"
@@ -10,6 +11,7 @@
 #include "DirectX9.cpp"
 #include "zRender.cpp"
 #include "zCursor.cpp"
+#include "zConsole.cpp"
 #include "Plugin.cpp"
 #pragma endregion
 

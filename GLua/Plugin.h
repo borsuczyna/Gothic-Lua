@@ -1,7 +1,1 @@
-
-// This file added in headers queue
-// File: "Headers.h"
-
-namespace GOTHIC_ENGINE {
-  // Add your code here . . .
-}
+#define CURRENT_VERSION "0.1.23"

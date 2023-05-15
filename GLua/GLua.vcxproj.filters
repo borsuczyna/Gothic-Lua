@@ -235,6 +235,12 @@
     <Filter Include="Plugin\Workspace\Plugin\zCursor">
       <UniqueIdentifier>{ec4402c1-b52c-4f6a-8046-269003f9145c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zConsole">
+      <UniqueIdentifier>{422f2c07-7dfc-4dd8-b44d-a9df907a88a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zEvents">
+      <UniqueIdentifier>{e5c4a5f1-9903-4354-88ac-9366d966f720}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Interface.cpp">
@@ -2924,6 +2930,12 @@
     </ClInclude>
     <ClInclude Include="DirectX9.cpp">
       <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="zConsole.cpp">
+      <Filter>Plugin\Workspace\Plugin\zConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="zEvents.cpp">
+      <Filter>Plugin\Workspace\Plugin\zEvents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -19,6 +19,8 @@ namespace GOTHIC_ENGINE {
 		}
 
 		static void Update() {
+			if (!zRender::Initialized()) return;
+			ImGui::GetIO().MouseDrawCursor = visible;
 			if (!visible || !zWindow::IsGothicFocused()) return;
 
 			float vx, vy, vz;
@@ -31,7 +33,7 @@ namespace GOTHIC_ENGINE {
 			GetWindowRect(zWindow::GetGothicWindow(), &rect);
 			GetClientRect(zWindow::GetGothicWindow(), &crect);
 
-			zRender::DrawRectangle(x, y, 50, 50);
+			zRender::DrawRectangle(x, y, 10, 10, ImColor(255, 0, 0));
 
 			bool isDullscreen = zWindow::isFullscreen();
 			SetCursorPos(int(x) + rect.left + (isDullscreen ? 0 : 8), int(y) + rect.top + (isDullscreen ? 0 : 31));

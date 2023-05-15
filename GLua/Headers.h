@@ -6,6 +6,8 @@
 #define D3DCOLORVALUE_DEFINED
 #include "zRender.h"
 #include <cassert>
+#include <vector>
+#include <functional>
 #include <dxgi.h>
 #include <d3d11.h>
 #include <Directories/ImGui/imgui.h>
