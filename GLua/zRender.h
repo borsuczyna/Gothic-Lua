@@ -1,4 +1,3 @@
-#pragma once
 #include <d3d11.h>
 #define DIRECT3D_VERSION         0x0900
 

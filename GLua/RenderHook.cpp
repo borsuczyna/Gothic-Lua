@@ -1,5 +1,3 @@
-#include "Directories/MinHook/Include/MinHook.h"
-
 #if defined _M_X64
 typedef uint64_t uintx_t;
 #elif defined _M_IX86
