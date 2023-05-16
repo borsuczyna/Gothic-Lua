@@ -4,6 +4,13 @@
 // Automatically generated block
 #pragma region Includes
 #define D3DCOLORVALUE_DEFINED
+
+extern "C" {
+#include "lua/lua.h"
+#include "lua/lualib.h"
+#include "lua/lauxlib.h"
+}
+
 #include "zRender.h"
 #include <cassert>
 #include <vector>
@@ -15,6 +22,7 @@
 #include <Directories/ImGui/imgui_impl_dx11.h>
 #pragma comment(lib, "d3d11.lib")
 #include "Plugin.h"
+#include <filesystem>
 #pragma endregion
 
 // imgui

@@ -3,13 +3,13 @@
 #include "resource.h"
 
 namespace GOTHIC_ENGINE {
-
-    // TO DO
-    // Your code ...
-
     void Main_Init() {
         zCursor::SetVisible(true);
         zConsole::Init();
+        zLua::Init();
+        zEngine::Init();
+
+        zEngine::StartResource("example");
     }
 
     void Main_Loop() {

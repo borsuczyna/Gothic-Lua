@@ -241,6 +241,24 @@
     <Filter Include="Plugin\Workspace\Plugin\zEvents">
       <UniqueIdentifier>{e5c4a5f1-9903-4354-88ac-9366d966f720}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zLua">
+      <UniqueIdentifier>{bcc1aa0f-b5e5-49f5-92e7-ecf384b6cb24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zLua\lua">
+      <UniqueIdentifier>{d8e277b3-0336-47ce-9b48-d3dc5cfbcdcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zLua\Console">
+      <UniqueIdentifier>{4cb0582c-073f-424c-85b4-03132988a402}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zResource">
+      <UniqueIdentifier>{4fef2f26-ae60-46b8-acdc-53c6f82fdb35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zEngine">
+      <UniqueIdentifier>{6737498d-4009-440f-8f11-59642c3246c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zUtils">
+      <UniqueIdentifier>{b6598f08-1bcd-4138-affc-54cb4ffe558d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Interface.cpp">
@@ -329,6 +347,108 @@
     </ClCompile>
     <ClCompile Include="Directories\ImGui\imgui_widgets.cpp">
       <Filter>Plugin\Workspace\Plugin\zRender\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lapi.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lauxlib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lbaselib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcode.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lcorolib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lctype.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldblib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldebug.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldo.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ldump.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lfunc.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lgc.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\linit.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\liolib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\llex.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmathlib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lmem.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loadlib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lobject.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lopcodes.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\loslib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lparser.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstate.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstring.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lstrlib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltable.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltablib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\ltm.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lua.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\luac.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lundump.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lutf8lib.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lvm.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClCompile>
+    <ClCompile Include="lua\lzio.c">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2937,6 +3057,105 @@
     <ClInclude Include="zEvents.cpp">
       <Filter>Plugin\Workspace\Plugin\zEvents</Filter>
     </ClInclude>
+    <ClInclude Include="zLua.cpp">
+      <Filter>Plugin\Workspace\Plugin\zLua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lapi.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lauxlib.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lcode.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lctype.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldebug.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ldo.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lfunc.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lgc.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ljumptab.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llex.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\llimits.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lmem.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lobject.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lopcodes.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lopnames.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lparser.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lprefix.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstate.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lstring.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltable.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\ltm.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.hpp">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\luaconf.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lualib.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lundump.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lvm.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lzio.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaConsole.cpp">
+      <Filter>Plugin\Workspace\Plugin\zLua\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="zResource.cpp">
+      <Filter>Plugin\Workspace\Plugin\zResource</Filter>
+    </ClInclude>
+    <ClInclude Include="zEngine.cpp">
+      <Filter>Plugin\Workspace\Plugin\zEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="zUtils.cpp">
+      <Filter>Plugin\Workspace\Plugin\zUtils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".build_settings.inl">
@@ -4816,6 +5035,9 @@
     </None>
     <None Include="Plugin.patch">
       <Filter>Plugin\Workspace\Plugin</Filter>
+    </None>
+    <None Include="lua\Makefile">
+      <Filter>Plugin\Workspace\Plugin\zLua\lua</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

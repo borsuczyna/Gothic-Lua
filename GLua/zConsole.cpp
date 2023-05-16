@@ -9,7 +9,8 @@ struct _LogType {
 	int Default = 0;
 	int Error = 1;
 	int Warning = 2;
-	int Input = 3;
+	int Success = 3;
+	int Input = 4;
 } LogType;
 ImVec4 outputColors[4] = {};
 
@@ -25,7 +26,7 @@ std::vector<LogItem>& ConsoleLogs() {
 }
 
 // Command Handlers
-using CommandCallback = std::function<void(void*)>;
+using CommandCallback = std::function<void(void*, int)>;
 struct CommandHandler {
 	char* command;
 	CommandCallback callback;
@@ -59,25 +60,18 @@ void freeMemory(char** words, int numWords) {
 	delete[] words;
 }
 
-char* toLowerCharArray(char* input) {
-	for (int i = 0; i < sizeof(input); i++) {
-		input[i] = tolower(input[i]);
-	}
-	return input;
-}
-
 namespace GOTHIC_ENGINE {
 	class zConsole {
 	private:
 		static void CommandExecuted(char* input) {
 			int numWords;
-			char** arguments = splitString(input, numWords);			
+			char** arguments = splitString(input, numWords);
 			zEvents::TriggerEvent("onCommandExecuted", &arguments);
 
 			bool commandFound = false;
 			for (const auto& commandHandler : CommandHandlers()) {
-				if (strcmp(toLowerCharArray(commandHandler.command), toLowerCharArray(arguments[0])) == 0) {
-					commandHandler.callback(&arguments);
+				if (strcmp(commandHandler.command, arguments[0]) == 0) {
+					commandHandler.callback(arguments, numWords);
 					commandFound = true;
 				}
 			}
@@ -168,7 +162,8 @@ namespace GOTHIC_ENGINE {
 
 			outputColors[LogType.Default] = ImVec4(1, 1, 1, 1);
 			outputColors[LogType.Error] = ImVec4(1, 0, 0, 1);
-			outputColors[LogType.Warning] = ImVec4(1, 1, 0, 1);
+			outputColors[LogType.Warning] = ImVec4(1, .7, 0, 1);
+			outputColors[LogType.Success] = ImVec4(.2, 1, .1, 1);
 			outputColors[LogType.Input] = ImVec4(.5, .5, .5, 1);
 
 			char message[256];
