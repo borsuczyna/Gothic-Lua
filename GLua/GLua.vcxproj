@@ -1000,11 +1000,15 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="zEngine.cpp">
+    <ClInclude Include="zResourceManager.cpp">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="zEvents.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="zFileSystem.cpp">
       <SubType>
       </SubType>
     </ClInclude>

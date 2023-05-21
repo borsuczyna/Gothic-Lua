@@ -1,25 +1,47 @@
 namespace GOTHIC_ENGINE {
 	class zResource {
-	private:
+	public:
+		std::string name;
 		std::string resourcePath;
+		bool started = false;
 
-		static std::vector<zLuaScript>& Scripts() {
+	private:
+		zLuaScript mainLuaFile;
+		/*static std::vector<zLuaScript>& Scripts() {
 			static std::vector<zLuaScript> scripts;
 			return scripts;
-		}
+		}*/
 
 	public:
 		zResource(std::string name) {
-			resourcePath = "resources/" + name + '/';
+			this->name = name;
 
-			if (!zUtils::DirectoryExists(resourcePath)) {
-				zConsole::Log("Resource '" + name + "' does not exist.", LogType.Error);
+			std::filesystem::path cwd = zFileSystem::GetCurrentDirectory() + ("resources\\" + name + "\\");
+			resourcePath = cwd.string();
+
+			if (!zFileSystem::DirectoryExists(resourcePath)) {
+				zConsole::Log("Resource '" + name + "' does not exist", LogType.Error);
+				return;
 			}
 
-			zUtils::ScanDirectory("resources/");
-			printf("loading resource %s\n", name.c_str());
+			if (!zFileSystem::FileExists(resourcePath + "main.lua")) {
+				zConsole::Log("No entry Lua file for resource '" + name + "' was found (main.lua)", LogType.Error);
+				return;
+			}
 
-			zConsole::Log("Started resource '" + name + "'.", LogType.Success);
+			// load main.lua
+			mainLuaFile = zLuaScript();
+			mainLuaFile.SetRequirePath(resourcePath + "?.lua");
+			mainLuaFile.LoadDefaultDefinitions();
+			mainLuaFile.DoFile(resourcePath + "main.lua");
+
+			// finish
+			zConsole::Log("Started resource '" + name, LogType.Success);
+			this->started = true;
+		}
+
+		bool DoesScriptComesFromResource(lua_State* L) {
+			return (mainLuaFile.L == L);
 		}
 	};
 }

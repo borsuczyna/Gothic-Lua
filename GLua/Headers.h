@@ -12,25 +12,23 @@ extern "C" {
 }
 
 #include "zRender.h"
-
 #include <cassert>
 #include <vector>
 #include <functional>
-#include <filesystem>
-#include <d3d11.h>
 #include <dxgi.h>
-
-// MinHook
-#include "Directories/MinHook/Include/MinHook.h"
-
-// ImGui
+#include <d3d11.h>
 #include <Directories/ImGui/imgui.h>
 #include <Directories/ImGui/imgui_impl_win32.h>
 #include <Directories/ImGui/imgui_impl_dx11.h>
-#include "Plugin.h"
-
-// Libs
 #pragma comment(lib, "d3d11.lib")
+#include "Directories/MinHook/Include/MinHook.h"
+
+#include "Plugin.h"
+#include <filesystem>
 #pragma endregion
+
+// imgui
+
+// minhook
 
 // ...

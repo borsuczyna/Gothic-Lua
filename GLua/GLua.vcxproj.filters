@@ -253,11 +253,14 @@
     <Filter Include="Plugin\Workspace\Plugin\zResource">
       <UniqueIdentifier>{4fef2f26-ae60-46b8-acdc-53c6f82fdb35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Plugin\Workspace\Plugin\zEngine">
-      <UniqueIdentifier>{6737498d-4009-440f-8f11-59642c3246c6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Plugin\Workspace\Plugin\zUtils">
       <UniqueIdentifier>{b6598f08-1bcd-4138-affc-54cb4ffe558d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zFileSystem">
+      <UniqueIdentifier>{ca90444c-758f-4db3-82de-28758b23c6cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zResourceManager">
+      <UniqueIdentifier>{6737498d-4009-440f-8f11-59642c3246c6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -3150,11 +3153,14 @@
     <ClInclude Include="zResource.cpp">
       <Filter>Plugin\Workspace\Plugin\zResource</Filter>
     </ClInclude>
-    <ClInclude Include="zEngine.cpp">
-      <Filter>Plugin\Workspace\Plugin\zEngine</Filter>
+    <ClInclude Include="zResourceManager.cpp">
+      <Filter>Plugin\Workspace\Plugin\zResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="zUtils.cpp">
       <Filter>Plugin\Workspace\Plugin\zUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="zFileSystem.cpp">
+      <Filter>Plugin\Workspace\Plugin\zFileSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

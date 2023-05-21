@@ -7,9 +7,9 @@ namespace GOTHIC_ENGINE {
         zCursor::SetVisible(true);
         zConsole::Init();
         zLua::Init();
-        zEngine::Init();
+        zResourceManager::Init();
 
-        zEngine::StartResource("example");
+        zResourceManager::StartResource("example");
     }
 
     void Main_Loop() {

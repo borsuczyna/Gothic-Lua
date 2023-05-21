@@ -68,6 +68,10 @@ namespace GOTHIC_ENGINE {
 			char** arguments = splitString(input, numWords);
 			zEvents::TriggerEvent("onCommandExecuted", &arguments);
 
+			char message[256];
+			sprintf(message, ">> %s", arguments[0]);
+			Log(message, LogType.Input);
+
 			bool commandFound = false;
 			for (const auto& commandHandler : CommandHandlers()) {
 				if (strcmp(commandHandler.command, arguments[0]) == 0) {
@@ -77,10 +81,6 @@ namespace GOTHIC_ENGINE {
 			}
 
 			if (!commandFound) {
-				char message[256];
-				sprintf(message, ">> %s", arguments[0]);
-				Log(message, LogType.Input);
-
 				sprintf(message, "Unknown command '%s' use help to see list of available commands", arguments[0]);
 				Log(message, LogType.Error);
 			}
@@ -133,7 +133,6 @@ namespace GOTHIC_ENGINE {
 		}
 	public:
 		static void Update() {
-			if (!zRender::Initialized()) return;
 			if ((zKeyboard::WasKeyPressed(VK_OEM_3) || zKeyboard::WasKeyPressed(VK_F8))) {
 				consoleOpen = !consoleOpen;
 				forceFocus = true;
@@ -169,6 +168,10 @@ namespace GOTHIC_ENGINE {
 			char message[256];
 			sprintf(message, "Gothic : GLua %s build %s %s", CURRENT_VERSION, __DATE__, __TIME__);
 			Log(message, LogType.Default);
+		}
+
+		static bool IsOpen() {
+			return consoleOpen;
 		}
 	};
 }

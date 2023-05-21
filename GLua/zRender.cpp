@@ -198,10 +198,10 @@ namespace GOTHIC_ENGINE {
 		static void InitRender() {
 			DXVersion = RenderHook::GetDirectXVersion();
 			if (DXVersion == DirectXVersion.D3D11) {
-				printf("hooking to dx11...\n");
+				zConsole::Log("Hooking to DX11 render...", LogType.Default);
 			}
 			else if (DXVersion == DirectXVersion.D3D9) {
-				printf("hooking to dx9...\n");
+				zConsole::Log("Hooking to DX9 render...", LogType.Default);
 			}
 			else {
 				MessageBoxA(zWindow::GetGothicWindow(), "error", "directx version not supported, install dx11 or gothic-legacyaltrenderer", MB_OK);
