@@ -1,11 +1,13 @@
 namespace GOTHIC_ENGINE {
-	class zLuaConsole {
-	public:
-		static int Log(lua_State* L) {
-			const char* readString = luaL_checkstring(L, 1);
-			zConsole::Log(std::string(readString), LogType.Default);
+	int zLuaConsole::Log(lua_State* L) {
+		const char* readString = luaL_checkstring(L, 1);
+		zResource resource = zResourceManager::GetResourceByScript(L);
+		std::string resourceName = "temp runtime";
+		if(resource.started)
+			resourceName = resource.name;
 
-			return 0;
-		}
-	};
+		zConsole::Log("[" + resourceName + "] " + std::string(readString), LogType.Default);
+
+		return 0;
+	}
 }

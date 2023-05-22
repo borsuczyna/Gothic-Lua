@@ -1,47 +1,32 @@
 namespace GOTHIC_ENGINE {
-	class zResource {
-	public:
-		std::string name;
-		std::string resourcePath;
-		bool started = false;
+	zResource::zResource(std::string name) {
+		this->name = name;
+		printf("init %s\n", name.c_str());
 
-	private:
-		zLuaScript mainLuaFile;
-		/*static std::vector<zLuaScript>& Scripts() {
-			static std::vector<zLuaScript> scripts;
-			return scripts;
-		}*/
+		std::filesystem::path cwd = zFileSystem::GetCurrentDirectory() + ("resources\\" + name + "\\");
+		resourcePath = cwd.string();
 
-	public:
-		zResource(std::string name) {
-			this->name = name;
-
-			std::filesystem::path cwd = zFileSystem::GetCurrentDirectory() + ("resources\\" + name + "\\");
-			resourcePath = cwd.string();
-
-			if (!zFileSystem::DirectoryExists(resourcePath)) {
-				zConsole::Log("Resource '" + name + "' does not exist", LogType.Error);
-				return;
-			}
-
-			if (!zFileSystem::FileExists(resourcePath + "main.lua")) {
-				zConsole::Log("No entry Lua file for resource '" + name + "' was found (main.lua)", LogType.Error);
-				return;
-			}
-
-			// load main.lua
-			mainLuaFile = zLuaScript();
-			mainLuaFile.SetRequirePath(resourcePath + "?.lua");
-			mainLuaFile.LoadDefaultDefinitions();
-			mainLuaFile.DoFile(resourcePath + "main.lua");
-
-			// finish
-			zConsole::Log("Started resource '" + name, LogType.Success);
-			this->started = true;
+		if (!zFileSystem::DirectoryExists(resourcePath)) {
+			zConsole::Log("Resource '" + name + "' does not exist", LogType.Error);
+			return;
 		}
 
-		bool DoesScriptComesFromResource(lua_State* L) {
-			return (mainLuaFile.L == L);
+		if (!zFileSystem::FileExists(resourcePath + "main.lua")) {
+			zConsole::Log("No entry Lua file for resource '" + name + "' was found (main.lua)", LogType.Error);
+			return;
 		}
-	};
+
+		// load main.lua
+		this->mainLuaFile = zLuaScript();
+		this->mainLuaFile.SetRequirePath(resourcePath + "?.lua");
+		this->mainLuaFile.LoadDefaultDefinitions();
+
+		// finish
+		zConsole::Log("Started resource '" + name + "'", LogType.Success);
+		this->started = true;
+	}
+
+	void zResource::StartLua() {
+		this->mainLuaFile.DoFile(resourcePath + "main.lua");
+	}
 }

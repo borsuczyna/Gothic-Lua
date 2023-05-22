@@ -3162,6 +3162,39 @@
     <ClInclude Include="zFileSystem.cpp">
       <Filter>Plugin\Workspace\Plugin\zFileSystem</Filter>
     </ClInclude>
+    <ClInclude Include="zUtils.h">
+      <Filter>Plugin\Workspace\Plugin\zUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="zFileSystem.h">
+      <Filter>Plugin\Workspace\Plugin\zFileSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="zEvents.h">
+      <Filter>Plugin\Workspace\Plugin\zEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="zKeyboard.h">
+      <Filter>Plugin\Workspace\Plugin\zKeyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="zWindow.h">
+      <Filter>Plugin\Workspace\Plugin\zWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderHook.h">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="zCursor.h">
+      <Filter>Plugin\Workspace\Plugin\zCursor</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaConsole.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="zLua.h">
+      <Filter>Plugin\Workspace\Plugin\zLua</Filter>
+    </ClInclude>
+    <ClInclude Include="zResource.h">
+      <Filter>Plugin\Workspace\Plugin\zResource</Filter>
+    </ClInclude>
+    <ClInclude Include="zResourceManager.h">
+      <Filter>Plugin\Workspace\Plugin\zResourceManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".build_settings.inl">

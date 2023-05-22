@@ -1,32 +1,3 @@
-#include <d3d11.h>
-#define DIRECT3D_VERSION         0x0900
-
-#define D3DVECTOR_DEFINED
-#define D3DRECT_DEFINED
-#define D3DMATRIX_DEFINED
-#define D3DLIGHTTYPE_DEFINED
-#define D3DSHADEMODE_DEFINED
-#define D3DFILLMODE_DEFINED
-#define D3DBLEND_DEFINED
-#define D3DTEXTUREADDRESS_DEFINED
-#define D3DCMPFUNC_DEFINED
-#define D3DSTENCILOP_DEFINED
-#define D3DFOGMODE_DEFINED
-#define D3DZBUFFERTYPE_DEFINED
-#define D3DCULL_DEFINED
-#define D3DPRIMITIVETYPE_DEFINED
-#define D3DTRANSFORMSTATETYPE_DEFINED
-#define D3DMATERIALCOLORSOURCE_DEFINED
-#define D3DTEXTURESTAGESTATETYPE_DEFINED
-#define D3DRENDERSTATETYPE_DEFINED
-#define D3DTEXTUREOP_DEFINED
-#define D3DSTATEBLOCKTYPE_DEFINED
-#define D3DVERTEXBLENDFLAGS_DEFINED
-#define D3DTEXTURETRANSFORMFLAGS_DEFINED
-
-#include <d3d9.h>
-#define DIRECT3D_VERSION         0x0700
-
 typedef HRESULT(APIENTRY* IDXGISwapChainPresent)(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 IDXGISwapChainPresent oIDXGISwapChainPresent;
 
@@ -65,3 +36,61 @@ SetVertexShader oSetVertexShader = NULL;
 
 typedef HRESULT(APIENTRY* SetPixelShader)(IDirect3DDevice9*, IDirect3DPixelShader9*);
 SetPixelShader oSetPixelShader = NULL;
+
+#define MAX_DRAW_QUEUE 1024
+
+namespace GOTHIC_ENGINE {
+    extern bool ShowMenu;
+    extern bool ImGui_Initialised;
+    extern bool initializedRender;
+
+    namespace Process {
+        extern DWORD ID;
+        extern HANDLE Handle;
+        extern HWND Hwnd;
+        extern HMODULE Module;
+        extern WNDPROC WndProc;
+        extern int WindowWidth;
+        extern int WindowHeight;
+        extern LPCSTR Title;
+        extern LPCSTR ClassName;
+        extern LPCSTR Path;
+    }
+
+    namespace DirectX11Interface {
+        extern ID3D11Device* Device;
+        extern ID3D11DeviceContext* DeviceContext;
+        extern ID3D11RenderTargetView* RenderTargetView;
+    }
+
+    int DXVersion = DirectXVersion.Unknown;
+
+    struct Rectangle {
+        float x;
+        float y;
+        float w;
+        float h;
+        ImColor color;
+        bool inUse;
+    };
+
+    // Elements
+    Rectangle rectangleQueue[MAX_DRAW_QUEUE] = {};
+
+    LRESULT APIENTRY WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+    void DrawQueuedElements();
+    HMODULE GetThisDllHandle();
+
+    class zRender {
+    private:
+        static HRESULT APIENTRY MJEndSceneDX9(IDirect3DDevice9* pDevice);
+        static HRESULT APIENTRY MJEndScene(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
+        static DWORD WINAPI MainThread(LPVOID lpParameter);
+        static void InitRender();
+    public:
+        static bool Initialized();
+        static void Update();
+        static void DrawRectangle(float x, float y, float w, float h, ImColor color = ImColor(255, 255, 255));
+    };
+
+}

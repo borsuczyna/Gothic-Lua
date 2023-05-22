@@ -231,45 +231,42 @@ bool pressedKeyStates[CONTROLS_COUNT] = {};
 bool releasedKeyStates[CONTROLS_COUNT] = {};
 
 namespace GOTHIC_ENGINE {
-	class zKeyboard {
-	public:
-        static bool WasKeyPressed(int key) {
-            for (int i = 0; i < CONTROLS_COUNT; i++) {
-                if (key == keyboardControls[i]) return pressedKeyStates[i];
-            }
-            return false;
+    bool zKeyboard::WasKeyPressed(int key) {
+        for (int i = 0; i < CONTROLS_COUNT; i++) {
+            if (key == keyboardControls[i]) return pressedKeyStates[i];
+        }
+        return false;
+    }
+
+    bool zKeyboard::WasKeyReleased(int key) {
+        for (int i = 0; i < CONTROLS_COUNT; i++) {
+            if (key == keyboardControls[i]) return releasedKeyStates[i];
+        }
+        return false;
+    }
+
+    bool zKeyboard::IsKeyDown(int key) {
+        for (int i = 0; i < CONTROLS_COUNT; i++) {
+            if (key == keyboardControls[i]) return keyStates[i];
+        }
+        return false;
+    }
+
+    void zKeyboard::Update() {
+        for (int i = 0; i < CONTROLS_COUNT; i++) {
+            pressedKeyStates[i] = false;
+            releasedKeyStates[i] = false;
         }
 
-        static bool WasKeyReleased(int key) {
-            for (int i = 0; i < CONTROLS_COUNT; i++) {
-                if (key == keyboardControls[i]) return releasedKeyStates[i];
+        for (int i = 0; i < CONTROLS_COUNT; i++) {
+            if (!keyStates[i] && GetAsyncKeyState(keyboardControls[i]) & 0x8000) {
+                keyStates[i] = true;
+                pressedKeyStates[i] = true;
             }
-            return false;
-        }
-
-        static bool IsKeyDown(int key) {
-            for (int i = 0; i < CONTROLS_COUNT; i++) {
-                if (key == keyboardControls[i]) return keyStates[i];
-            }
-            return false;
-        }
-
-		static void Update() {
-            for (int i = 0; i < CONTROLS_COUNT; i++) {
-                pressedKeyStates[i] = false;
+            else if (keyStates[i] && !(GetAsyncKeyState(keyboardControls[i]) & 0x8000)) {
+                keyStates[i] = false;
                 releasedKeyStates[i] = false;
             }
-
-            for (int i = 0; i < CONTROLS_COUNT; i++) {
-                if (!keyStates[i] && GetAsyncKeyState(keyboardControls[i]) & 0x8000) {
-                    keyStates[i] = true;
-                    pressedKeyStates[i] = true;
-                }
-                else if (keyStates[i] && !(GetAsyncKeyState(keyboardControls[i]) & 0x8000)) {
-                    keyStates[i] = false;
-                    releasedKeyStates[i] = false;
-                }
-            }
-		}
-	};
+        }
+    }
 }
