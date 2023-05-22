@@ -10,7 +10,8 @@ namespace GOTHIC_ENGINE {
         static bool isFullscreen();
         static bool IsGothicFocused();
         static HWND GetGothicWindow();
-        static void SetSize(int width, int height);
+        static void SetResolution(int width, int height);
+        static void GetResolution(int& width, int& height);
         static void Update();
     };
 }

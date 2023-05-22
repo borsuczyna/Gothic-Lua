@@ -6,20 +6,20 @@ namespace GOTHIC_ENGINE {
 		this->initialized = true;
 	}
 
-	void zLuaScript::LoadDefinitions(std::string name, const luaL_Reg* definitions) {
+	void zLuaScript::LoadDefinitions(const char* name, const luaL_Reg* definitions) {
 		lua_newtable(this->L);
 		luaL_setfuncs(this->L, definitions, 0);
-		lua_setglobal(this->L, name.c_str());
+		lua_setglobal(this->L, name);
 	}
 
-	void zLuaScript::DoString(std::string code) {
-		if (luaL_dostring(this->L, code.c_str()) != LUA_OK) {
+	void zLuaScript::DoString(const char* code) {
+		if (luaL_dostring(this->L, code) != LUA_OK) {
 			printf("Error: %s\n", lua_tostring(this->L, -1));
 		}
 	}
 
-	void zLuaScript::DoFile(std::string file) {
-		if (luaL_dofile(this->L, file.c_str()) != LUA_OK) {
+	void zLuaScript::DoFile(const char* file) {
+		if (luaL_dofile(this->L, file) != LUA_OK) {
 			printf("Error: %s\n", lua_tostring(this->L, -1));
 		}
 	}
@@ -37,9 +37,9 @@ namespace GOTHIC_ENGINE {
 		LoadDefinitions("console", consoleLib);
 	}
 
-	void zLuaScript::SetRequirePath(std::string path) {
+	void zLuaScript::SetRequirePath(const char* path) {
 		lua_getglobal(this->L, "package");  // Get the "package" table
-		lua_pushstring(this->L, path.c_str());  // Push the new require path
+		lua_pushstring(this->L, path);  // Push the new require path
 		lua_setfield(this->L, -2, "path");  // Set the "path" field in the "package" table
 		lua_pop(this->L, 1);  // Pop the "package" table from the stack
 	}
@@ -55,7 +55,7 @@ namespace GOTHIC_ENGINE {
 
 		zLuaScript l = zLuaScript();
 		l.LoadDefaultDefinitions();
-		l.DoString(concatenatedString.c_str());
+		l.DoString((char*)concatenatedString.c_str());
 		l.CloseState();
 	}
 

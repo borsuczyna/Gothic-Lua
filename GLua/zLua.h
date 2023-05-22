@@ -6,12 +6,12 @@ namespace GOTHIC_ENGINE {
 
 		zLuaScript();
 
-		void LoadDefinitions(std::string name, const luaL_Reg* definitions);
-		void DoString(std::string code);
-		void DoFile(std::string file);
+		void LoadDefinitions(const char* name, const luaL_Reg* definitions);
+		void DoString(const char* code);
+		void DoFile(const char* file);
 		void CloseState();
 		void LoadDefaultDefinitions();
-		void SetRequirePath(std::string path);
+		void SetRequirePath(const char* path);
 	};
 
 	class zLua {

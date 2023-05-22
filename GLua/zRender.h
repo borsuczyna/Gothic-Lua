@@ -74,8 +74,14 @@ namespace GOTHIC_ENGINE {
         bool inUse;
     };
 
-    // Elements
-    Rectangle rectangleQueue[MAX_DRAW_QUEUE] = {};
+    struct Text {
+        char* text;
+        float x;
+        float y;
+        float w;
+        float h;
+        ImColor color;
+    };
 
     LRESULT APIENTRY WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
     void DrawQueuedElements();
@@ -91,6 +97,7 @@ namespace GOTHIC_ENGINE {
         static bool Initialized();
         static void Update();
         static void DrawRectangle(float x, float y, float w, float h, ImColor color = ImColor(255, 255, 255));
+        static void DrawTextElement(char* string, float x, float y, float w, float h, ImColor color = ImColor(255, 255, 255));
     };
 
 }

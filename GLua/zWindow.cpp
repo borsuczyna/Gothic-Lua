@@ -7,6 +7,7 @@ int resolutions[4][2] = {
     {1280, 720},
     {1920, 1080},
 };
+int resolution[2] = { 1280, 720 };
 int currentResolution = 0;
 
 namespace GOTHIC_ENGINE {
@@ -26,7 +27,7 @@ namespace GOTHIC_ENGINE {
         GetClientRect(hWnd, &rcClient);
         AdjustWindowRect(&rcClient, dwStyle, FALSE);
 
-        zWindow::SetSize(1920, 1080);
+        zWindow::SetResolution(1920, 1080);
         ogame->UpdateScreenResolution();
 
         windowedModeInitialized = true;
@@ -58,7 +59,7 @@ namespace GOTHIC_ENGINE {
         return hWnd;
     }
 
-    void zWindow::SetSize(int width, int height) {
+    void zWindow::SetResolution(int width, int height) {
         HWND hWnd = GetGothicWindow();
         if (hWnd == (HWND)-1) return;
 
@@ -71,6 +72,14 @@ namespace GOTHIC_ENGINE {
         pos.Y = 8192;
         zCViewDraw::GetScreen().SetVirtualSize(pos);
         SetWindowPos(hWnd, NULL, x, y, width, height, SWP_NOMOVE | SWP_NOZORDER | SWP_FRAMECHANGED);
+
+        resolution[0] = width;
+        resolution[1] = height;
+    }
+
+    void zWindow::GetResolution(int& width, int& height) {
+        width = resolution[0];
+        height = resolution[1];
     }
 
     void zWindow::Update() {
@@ -78,7 +87,7 @@ namespace GOTHIC_ENGINE {
         if (!(zKeyboard::IsKeyDown(VK_CONTROL) && zKeyboard::WasKeyPressed('L'))) return;
 
         currentResolution = (currentResolution + 1) % 4;
-        SetSize(resolutions[currentResolution][0], resolutions[currentResolution][1]);
+        zWindow::SetResolution(resolutions[currentResolution][0], resolutions[currentResolution][1]);
 
         printf("changed resolution\n");
     }

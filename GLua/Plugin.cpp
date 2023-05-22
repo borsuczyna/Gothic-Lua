@@ -1,5 +1,3 @@
-// This file added in headers queue
-// File: "Sources.h"
 #include "resource.h"
 
 namespace GOTHIC_ENGINE {

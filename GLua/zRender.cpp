@@ -5,6 +5,16 @@ namespace GOTHIC_ENGINE {
     bool ImGui_Initialised = false;
     bool initializedRender = false;
 
+    std::vector<Rectangle>& Rectangles() {
+        static std::vector<Rectangle> rectangles;
+        return rectangles;
+    }
+
+    std::vector<Text>& Texts() {
+        static std::vector<Text> texts;
+        return texts;
+    }
+
     namespace Process {
         DWORD ID;
         HANDLE Handle;
@@ -34,15 +44,28 @@ namespace GOTHIC_ENGINE {
     void DrawQueuedElements() {
         // rectangles
         ImDrawList* drawList = ImGui::GetBackgroundDrawList();
-        for (int i = 0; i < MAX_DRAW_QUEUE; i++) {
-            Rectangle rectangle = rectangleQueue[i];
-            if (rectangle.inUse) {
-                ImVec2 start(rectangle.x, rectangle.y);
-                ImVec2 end(rectangle.x + rectangle.w, rectangle.y + rectangle.h);
+        for (Rectangle rectangle : Rectangles()) {
+            ImVec2 start(rectangle.x, rectangle.y);
+            ImVec2 end(rectangle.x + rectangle.w, rectangle.y + rectangle.h);
 
-                drawList->AddRectFilled(start, end, rectangle.color);
-                rectangleQueue[i].inUse = false;
-            }
+            drawList->AddRectFilled(start, end, rectangle.color);
+        }
+        Rectangles().clear();
+
+        // texts
+        for (Text text : Texts()) {
+            ImGui::SetNextWindowPos(ImVec2(text.x, text.y), ImGuiCond_Always);
+            ImGui::SetNextWindowSize(ImVec2(0, 0), ImGuiCond_Always);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+            ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
+            ImGui::PushStyleColor(ImGuiCol_WindowBg, ImVec4(0.0f, 0.0f, 0.0f, 0.0f));
+            ImGui::Begin("TextWindow", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoInputs);
+
+            ImGui::Text(text.text);
+
+            ImGui::End();
+            ImGui::PopStyleVar(2);
+            ImGui::PopStyleColor();
         }
     }
 
@@ -61,17 +84,26 @@ namespace GOTHIC_ENGINE {
     }
 
     void zRender::DrawRectangle(float x, float y, float w, float h, ImColor color) {
-        for (int i = 0; i < MAX_DRAW_QUEUE; i++) {
-            if (!rectangleQueue[i].inUse) {
-                rectangleQueue[i].x = x;
-                rectangleQueue[i].y = y;
-                rectangleQueue[i].w = w;
-                rectangleQueue[i].h = h;
-                rectangleQueue[i].color = color;
-                rectangleQueue[i].inUse = true;
-                break;
-            }
-        }
+        Rectangle rectangle;
+        rectangle.x = x;
+        rectangle.y = y;
+        rectangle.w = w;
+        rectangle.h = h;
+        rectangle.color = color;
+
+        Rectangles().push_back(rectangle);
+    }
+
+    void zRender::DrawTextElement(char* string, float x, float y, float w, float h, ImColor color) {
+        Text text;
+        text.text = string;
+        text.x = x;
+        text.y = y;
+        text.w = w;
+        text.h = h;
+        text.color = color;
+
+        Texts().push_back(text);
     }
 
     // DirectX9 ImGui
@@ -141,6 +173,15 @@ namespace GOTHIC_ENGINE {
 
         zEvents::TriggerEvent("onImGuiRender", NULL);
         DrawQueuedElements();
+
+
+        int width, height;
+        zWindow::GetResolution(width, height);
+        char buffer[256];
+        sprintf_s(buffer, "Gothic : GLua %s build %s %s", CURRENT_VERSION, __DATE__, __TIME__);
+        ImVec2 textSize = ImGui::CalcTextSize(buffer);
+
+        zRender::DrawTextElement(buffer, width - textSize.x - 4, height - textSize.y - 4, textSize.x, textSize.y);
 
         ImGui::EndFrame();
         ImGui::Render();

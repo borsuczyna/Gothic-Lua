@@ -18,7 +18,7 @@ namespace GOTHIC_ENGINE {
 
 		// load main.lua
 		this->mainLuaFile = zLuaScript();
-		this->mainLuaFile.SetRequirePath(resourcePath + "?.lua");
+		this->mainLuaFile.SetRequirePath(std::string(resourcePath + "?.lua").c_str());
 		this->mainLuaFile.LoadDefaultDefinitions();
 
 		// finish
@@ -27,6 +27,6 @@ namespace GOTHIC_ENGINE {
 	}
 
 	void zResource::StartLua() {
-		this->mainLuaFile.DoFile(resourcePath + "main.lua");
+		this->mainLuaFile.DoFile(std::string(resourcePath + "main.lua").c_str());
 	}
 }
