@@ -1,9 +1,32 @@
-﻿  FileVersion", "1.0.0.439"
-  ProductVersion", "1.0.0.439"
-  FILEVERSION 1,0,0,439
-  PRODUCTVERSION 1,0,0,439
+﻿  FileVersion", "1.0.0.446"
+  ProductVersion", "1.0.0.446"
+  FILEVERSION 1,0,0,446
+  PRODUCTVERSION 1,0,0,446
   ------ 
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx10.cpp
+  imgui_impl_dx11.cpp
+  imgui_impl_dx12.cpp
+  imgui_impl_dx9.cpp
+  imgui_impl_win32.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  DllMain.cpp
   Interface.cpp
+  ClassDeclarators_G2A.cpp
+  Globals_G2A.cpp
+  Statics_G2A.cpp
+  ClassDeclarators_G2.cpp
+  Globals_G2.cpp
+  Statics_G2.cpp
+  ClassDeclarators_G1A.cpp
+  Globals_G1A.cpp
+  Statics_G1A.cpp
+  ClassDeclarators_G1.cpp
+  Globals_G1.cpp
+  Statics_G1.cpp
   buffer.c
   hde32.c
   hde64.c
@@ -45,6 +68,6 @@
   lzio.c
   Generating code
   Previous IPDB not found, fall back to full compilation.
-  All 3053 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 3048 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   GLua.vcxproj -> F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\GLua.dll

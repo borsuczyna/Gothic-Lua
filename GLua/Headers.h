@@ -11,16 +11,19 @@ extern "C" {
 #include "lua/lauxlib.h"
 }
 
-#include "zRender.h"
 #include <cassert>
 #include <vector>
 #include <functional>
+
+#include "zRender.h"
+
 #include <dxgi.h>
 #include <d3d11.h>
+#pragma comment(lib, "d3d11.lib")
+
 #include <Directories/ImGui/imgui.h>
 #include <Directories/ImGui/imgui_impl_win32.h>
 #include <Directories/ImGui/imgui_impl_dx11.h>
-#pragma comment(lib, "d3d11.lib")
 #include "Directories/MinHook/Include/MinHook.h"
 
 #include "Plugin.h"

@@ -3,9 +3,7 @@ namespace GOTHIC_ENGINE {
 	public:
 		static int Log(lua_State* L) {
 			const char* readString = luaL_checkstring(L, 1);
-			//zResource resource = zResourceManager::GetResourceByScript(L);
-			std::string message = "[temp runtime] " + std::string(readString);
-			zConsole::Log(message, LogType.Default);
+			zConsole::Log(std::string(readString), LogType.Default);
 
 			return 0;
 		}
