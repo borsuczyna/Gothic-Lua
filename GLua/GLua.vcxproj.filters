@@ -265,6 +265,12 @@
     <Filter Include="Plugin\Workspace\Plugin\zLua\Events">
       <UniqueIdentifier>{12599372-23f3-42be-8e4f-e9d4321bd715}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zLua\Cursor">
+      <UniqueIdentifier>{4628aabe-0b6c-48fc-98cb-28f5cb39c7e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zLua\Render">
+      <UniqueIdentifier>{ec1f5d4c-e420-4224-a346-cd3d958fad17}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Interface.cpp">
@@ -3206,6 +3212,12 @@
     </ClInclude>
     <ClInclude Include="zLuaArgReader.h">
       <Filter>Plugin\Workspace\Plugin\zLua</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaCursor.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\Cursor</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaCursor.cpp">
+      <Filter>Plugin\Workspace\Plugin\zLua\Cursor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

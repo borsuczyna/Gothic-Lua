@@ -13,6 +13,8 @@
 #include "zCursor.cpp"
 #include "zLuaConsole.cpp"
 #include "zLuaEvents.cpp"
+#include "zLuaCursor.cpp"
+#include "zLuaRender.cpp"
 #include "zLua.cpp"
 #include "zResource.cpp"
 #include "zResourceManager.cpp"

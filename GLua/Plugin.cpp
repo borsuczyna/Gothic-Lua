@@ -4,7 +4,6 @@ namespace GOTHIC_ENGINE {
     void Main_Init() {
         zCursor::SetVisible(true);
         zConsole::Init();
-        zLuaEvents::Init();
         zLua::Init();
         zResourceManager::Init();
 

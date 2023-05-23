@@ -35,7 +35,7 @@ namespace GOTHIC_ENGINE {
 
 	void zLuaScript::LoadDefaultDefinitions() {
 		static const luaL_Reg consoleLib[] = {
-			{"log", zLuaConsole::Log},			// console.log(string: text)
+			{"log", zLuaConsole::Log},
 			{ NULL, NULL }
 		};
 
@@ -43,14 +43,43 @@ namespace GOTHIC_ENGINE {
 		AddFunctionDefinition("print", zLuaConsole::Log);
 
 		// Events
+		static const luaL_Reg eventLib[] = {
+			{"addHandler", zLuaEvents::AddEventHandler},
+			{ NULL, NULL }
+		};
+
+		LoadDefinitions("event", eventLib);
 		AddFunctionDefinition("addEventHandler", zLuaEvents::AddEventHandler);
+
+		// Cursor
+		static const luaL_Reg cursorLib[] = {
+			{"getPosition", zLuaCursor::GetPosition},
+			{ NULL, NULL }
+		};
+
+		LoadDefinitions("cursor", cursorLib);
+		AddFunctionDefinition("getCursorPosition", zLuaCursor::GetPosition);
+
+		// Nil for safety reasons
+		lua_pushnil(L);
+		lua_setglobal(L, "os");
+		lua_pushnil(L);
+		lua_setglobal(L, "io");
+		lua_pushnil(L);
+		lua_setglobal(L, "load");
+		lua_pushnil(L);
+		lua_setglobal(L, "loadfile");
+		lua_pushnil(L);
+		lua_setglobal(L, "dofile");
+		lua_pushnil(L);
+		lua_setglobal(L, "debug");
 	}
 
 	void zLuaScript::SetRequirePath(const char* path) {
-		lua_getglobal(this->L, "package");  // Get the "package" table
-		lua_pushstring(this->L, path);  // Push the new require path
-		lua_setfield(this->L, -2, "path");  // Set the "path" field in the "package" table
-		lua_pop(this->L, 1);  // Pop the "package" table from the stack
+		lua_getglobal(this->L, "package");
+		lua_pushstring(this->L, path);
+		lua_setfield(this->L, -2, "path");
+		lua_pop(this->L, 1);
 	}
 
 	void zLua::ExecuteLuaCodeFromConsole(void* args, int argCount) {

@@ -128,7 +128,13 @@ namespace GOTHIC_ENGINE {
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
 
+        zLuaEvents::LuaEventArguments arguments;
+
         zEvents::TriggerEvent("onImGuiRender", NULL);
+        zLuaEvents::TriggerEvent("onImGuiRender", arguments);
+        zEvents::TriggerEvent("onClientRender", NULL);
+        zLuaEvents::TriggerEvent("onClientRender", arguments);
+
         DrawQueuedElements();
 
         ImGui::EndFrame();
@@ -172,7 +178,13 @@ namespace GOTHIC_ENGINE {
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
 
+        zLuaEvents::LuaEventArguments arguments;
+
         zEvents::TriggerEvent("onImGuiRender", NULL);
+        zLuaEvents::TriggerEvent("onImGuiRender", arguments);
+        zEvents::TriggerEvent("onClientRender", NULL);
+        zLuaEvents::TriggerEvent("onClientRender", arguments);
+
         DrawQueuedElements();
 
         int width, height;

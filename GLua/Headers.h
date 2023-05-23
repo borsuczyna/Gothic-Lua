@@ -66,6 +66,8 @@ extern "C" {
 #include "zCursor.h"
 #include "zLuaConsole.h"
 #include "zLuaEvents.h"
+#include "zLuaCursor.h"
+#include "zLuaRender.h"
 #include "zLuaArgReader.h"
 #include "zLua.h"
 #include "zResource.h"

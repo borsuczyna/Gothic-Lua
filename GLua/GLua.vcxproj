@@ -1008,6 +1008,11 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
     <ClInclude Include="zLua.h" />
     <ClInclude Include="zLuaArgReader.h" />
     <ClInclude Include="zLuaConsole.h" />
+    <ClInclude Include="zLuaCursor.h" />
+    <ClInclude Include="zLuaCursor.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="zLuaEvents.h" />
     <ClInclude Include="zLuaEvents.cpp">
       <SubType>
