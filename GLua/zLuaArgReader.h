@@ -26,6 +26,16 @@ namespace GOTHIC_ENGINE {
 			return readNumber;
 		}
 
+		int ReadInt(int arg, int defaultValue = 0) {
+			int readNumber = int(luaL_optnumber(this->L, arg, defaultValue));
+			return readNumber;
+		}
+
+		float ReadFloat(int arg, float defaultValue = 0.0f) {
+			float readNumber = float(luaL_optnumber(this->L, arg, defaultValue));
+			return readNumber;
+		}
+
 		bool ReadBoolean(int arg, bool defaultValue = false) {
 			int readBoolean = lua_toboolean(this->L, arg);
 			if (readBoolean == 0) {

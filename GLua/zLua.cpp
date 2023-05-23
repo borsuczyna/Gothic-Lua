@@ -17,6 +17,11 @@ namespace GOTHIC_ENGINE {
 		lua_setglobal(this->L, name);
 	}
 
+	void zLuaScript::RemoveDefinition(const char* name) {
+		lua_pushnil(this->L);
+		lua_setglobal(this->L, name);
+	}
+
 	void zLuaScript::DoString(const char* code) {
 		if (luaL_dostring(this->L, code) != LUA_OK) {
 			printf("Error: %s\n", lua_tostring(this->L, -1));
@@ -34,45 +39,29 @@ namespace GOTHIC_ENGINE {
 	}
 
 	void zLuaScript::LoadDefaultDefinitions() {
-		static const luaL_Reg consoleLib[] = {
-			{"log", zLuaConsole::Log},
-			{ NULL, NULL }
-		};
-
+		// Console
 		LoadDefinitions("console", consoleLib);
 		AddFunctionDefinition("print", zLuaConsole::Log);
 
 		// Events
-		static const luaL_Reg eventLib[] = {
-			{"addHandler", zLuaEvents::AddEventHandler},
-			{ NULL, NULL }
-		};
-
 		LoadDefinitions("event", eventLib);
 		AddFunctionDefinition("addEventHandler", zLuaEvents::AddEventHandler);
 
 		// Cursor
-		static const luaL_Reg cursorLib[] = {
-			{"getPosition", zLuaCursor::GetPosition},
-			{ NULL, NULL }
-		};
-
 		LoadDefinitions("cursor", cursorLib);
 		AddFunctionDefinition("getCursorPosition", zLuaCursor::GetPosition);
 
-		// Nil for safety reasons
-		lua_pushnil(L);
-		lua_setglobal(L, "os");
-		lua_pushnil(L);
-		lua_setglobal(L, "io");
-		lua_pushnil(L);
-		lua_setglobal(L, "load");
-		lua_pushnil(L);
-		lua_setglobal(L, "loadfile");
-		lua_pushnil(L);
-		lua_setglobal(L, "dofile");
-		lua_pushnil(L);
-		lua_setglobal(L, "debug");
+		// Render
+		LoadDefinitions("render", renderLib);
+		AddFunctionDefinition("dxDrawRectangle", zLuaRender::DrawRectangle);
+
+		// Remove for safety reasons
+		RemoveDefinition("os");
+		RemoveDefinition("io");
+		RemoveDefinition("load");
+		RemoveDefinition("loadfile");
+		RemoveDefinition("dofile");
+		RemoveDefinition("debug");
 	}
 
 	void zLuaScript::SetRequirePath(const char* path) {

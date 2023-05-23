@@ -1018,6 +1018,11 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="zLuaRender.h" />
+    <ClInclude Include="zLuaRender.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="zResource.h" />
     <ClInclude Include="zResourceManager.cpp">
       <SubType>

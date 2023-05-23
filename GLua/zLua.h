@@ -13,6 +13,7 @@ namespace GOTHIC_ENGINE {
 		void CloseState();
 		void LoadDefaultDefinitions();
 		void SetRequirePath(const char* path);
+		void RemoveDefinition(const char* name);
 	};
 
 	class zLua {

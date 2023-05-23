@@ -3219,6 +3219,12 @@
     <ClInclude Include="zLuaCursor.cpp">
       <Filter>Plugin\Workspace\Plugin\zLua\Cursor</Filter>
     </ClInclude>
+    <ClInclude Include="zLuaRender.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaRender.cpp">
+      <Filter>Plugin\Workspace\Plugin\zLua\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".build_settings.inl">

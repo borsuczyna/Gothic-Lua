@@ -31,4 +31,9 @@ namespace GOTHIC_ENGINE {
 		static std::vector<GLuaEvent>& Events();
 		static void EventTriggered(void* arguments);
 	};
+
+	static const luaL_Reg eventLib[] = {
+		{"addHandler", zLuaEvents::AddEventHandler},
+		{ NULL, NULL }
+	};
 }
