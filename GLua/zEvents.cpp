@@ -22,12 +22,26 @@ namespace GOTHIC_ENGINE {
 		}
 	}
 
+	bool zEvents::CompareByPriority(const zEvents::GLuaEvent& event1, const zEvents::GLuaEvent& event2) {
+		return event1.priority < event2.priority;
+	}
+
 	void zEvents::TriggerEvent(char* name, void* arguments) {
 		auto& events = Events();
-		for (auto& event : events) {
+		std::sort(events.begin(), events.end(), zEvents::CompareByPriority);
+
+		for (const GLuaEvent& event : events) {
 			if (strcmp(event.name, name) == 0) {
 				event.callback(arguments);
 			}
+		}
+	
+		if (strcmp(name, "EventTriggered") != 0) {
+			EventTriggeredArguments eventArgs;
+			eventArgs.eventName = name;
+			eventArgs.eventArguments = arguments;
+
+			TriggerEvent("EventTriggered", &eventArgs);
 		}
 	}
 }

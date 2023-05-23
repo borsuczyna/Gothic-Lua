@@ -67,6 +67,7 @@ namespace GOTHIC_ENGINE {
             ImGui::PopStyleVar(2);
             ImGui::PopStyleColor();
         }
+        Texts().clear();
     }
 
     HMODULE GetThisDllHandle() {
@@ -174,11 +175,10 @@ namespace GOTHIC_ENGINE {
         zEvents::TriggerEvent("onImGuiRender", NULL);
         DrawQueuedElements();
 
-
         int width, height;
         zWindow::GetResolution(width, height);
-        char buffer[256];
-        sprintf_s(buffer, "Gothic : GLua %s build %s %s", CURRENT_VERSION, __DATE__, __TIME__);
+        char* buffer = new char[256];
+        sprintf_s(buffer, 256, "Gothic : GLua %s build %s %s", CURRENT_VERSION, __DATE__, __TIME__);
         ImVec2 textSize = ImGui::CalcTextSize(buffer);
 
         zRender::DrawTextElement(buffer, width - textSize.x - 4, height - textSize.y - 4, textSize.x, textSize.y);

@@ -6,6 +6,7 @@ namespace GOTHIC_ENGINE {
 
 		zLuaScript();
 
+		void AddFunctionDefinition(const char* name, lua_CFunction function);
 		void LoadDefinitions(const char* name, const luaL_Reg* definitions);
 		void DoString(const char* code);
 		void DoFile(const char* file);

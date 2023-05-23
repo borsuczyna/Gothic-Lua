@@ -12,7 +12,7 @@ struct _LogType {
 	int Success = 3;
 	int Input = 4;
 } LogType;
-ImVec4 outputColors[4] = {};
+ImVec4 outputColors[5] = {};
 
 // Logs
 struct LogItem {
@@ -156,6 +156,13 @@ namespace GOTHIC_ENGINE {
 			CommandHandlers().push_back(commandHandler);
 		}
 
+		static void HelpCommand(void* arguments, int argCount) {
+			zConsole::Log("", LogType.Warning);
+			zConsole::Log("List of available commands:", LogType.Warning);
+			zConsole::Log("  start <resource name> - starts resource", LogType.Default);
+			zConsole::Log("  lua <code> - runs lua code", LogType.Default);
+		}
+
 		static void Init() {
 			zEvents::AddEventHandler("onImGuiRender", Render);
 
@@ -168,6 +175,8 @@ namespace GOTHIC_ENGINE {
 			char message[256];
 			sprintf(message, "Gothic : GLua %s build %s %s", CURRENT_VERSION, __DATE__, __TIME__);
 			Log(message, LogType.Default);
+
+			AddCommandHandler("help", HelpCommand);
 		}
 
 		static bool IsOpen() {

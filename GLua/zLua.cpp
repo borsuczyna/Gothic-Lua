@@ -6,6 +6,11 @@ namespace GOTHIC_ENGINE {
 		this->initialized = true;
 	}
 
+	void zLuaScript::AddFunctionDefinition(const char* name, lua_CFunction function) {
+		lua_pushcfunction(L, function);
+		lua_setglobal(L, name);
+	}
+
 	void zLuaScript::LoadDefinitions(const char* name, const luaL_Reg* definitions) {
 		lua_newtable(this->L);
 		luaL_setfuncs(this->L, definitions, 0);
@@ -35,6 +40,10 @@ namespace GOTHIC_ENGINE {
 		};
 
 		LoadDefinitions("console", consoleLib);
+		AddFunctionDefinition("print", zLuaConsole::Log);
+
+		// Events
+		AddFunctionDefinition("addEventHandler", zLuaEvents::AddEventHandler);
 	}
 
 	void zLuaScript::SetRequirePath(const char* path) {

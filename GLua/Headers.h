@@ -14,6 +14,8 @@ extern "C" {
 #include <vector>
 #include <functional>
 #include <filesystem>
+#include <sstream>
+#include <algorithm>
 
 // DirectX
 #define DIRECT3D_VERSION         0x0900
