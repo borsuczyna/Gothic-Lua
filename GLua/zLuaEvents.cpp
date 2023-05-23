@@ -1,0 +1,3 @@
+namespace GOTHIC_ENGINE {
+
+}

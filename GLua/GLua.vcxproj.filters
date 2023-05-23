@@ -262,6 +262,9 @@
     <Filter Include="Plugin\Workspace\Plugin\zResourceManager">
       <UniqueIdentifier>{6737498d-4009-440f-8f11-59642c3246c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Plugin\Workspace\Plugin\zLua\Events">
+      <UniqueIdentifier>{12599372-23f3-42be-8e4f-e9d4321bd715}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Interface.cpp">
@@ -3194,6 +3197,15 @@
     </ClInclude>
     <ClInclude Include="zResourceManager.h">
       <Filter>Plugin\Workspace\Plugin\zResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaEvents.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaEvents.cpp">
+      <Filter>Plugin\Workspace\Plugin\zLua\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaArgReader.h">
+      <Filter>Plugin\Workspace\Plugin\zLua</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ namespace GOTHIC_ENGINE {
         zLua::Init();
         zResourceManager::Init();
 
-        //zResourceManager::StartResource("example");
+        zResourceManager::StartResource("example");
     }
 
     void Main_Loop() {

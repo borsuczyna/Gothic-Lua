@@ -1,12 +1,12 @@
-﻿  FileVersion", "1.0.0.550"
-  ProductVersion", "1.0.0.550"
-  FILEVERSION 1,0,0,550
-  PRODUCTVERSION 1,0,0,550
+﻿  FileVersion", "1.0.0.553"
+  ProductVersion", "1.0.0.553"
+  FILEVERSION 1,0,0,553
+  PRODUCTVERSION 1,0,0,553
   ------ 
   Interface.cpp
   Generating code
-  2 of 3166 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+  184 of 3169 functions ( 5.8%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    25 functions had inline decision re-evaluated but remain unchanged
+    63 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   GLua.vcxproj -> F:\Program Files (x86)\Steam\steamapps\common\Gothic\system\Autorun\GLua.dll

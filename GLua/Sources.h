@@ -12,6 +12,7 @@
 #include "zRender.cpp"
 #include "zCursor.cpp"
 #include "zLuaConsole.cpp"
+#include "zLuaEvents.cpp"
 #include "zLua.cpp"
 #include "zResource.cpp"
 #include "zResourceManager.cpp"
