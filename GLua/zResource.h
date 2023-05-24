@@ -7,6 +7,7 @@ namespace GOTHIC_ENGINE {
 		bool started = false;
 
 		zResource(char* name);
+		~zResource();
 		bool DoesScriptComesFromResource(lua_State* L);
 		void StartLua();
 	};

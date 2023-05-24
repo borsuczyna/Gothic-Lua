@@ -75,4 +75,16 @@ namespace GOTHIC_ENGINE {
         lua_pushboolean(L, true);
         return 1;
     }
+
+    void zLuaEvents::RemoveLuaRefs(lua_State* L) {
+        auto& events = Events();
+
+        for (auto it = events.begin(); it != events.end(); ) {
+            if (it->L == L) {
+                luaL_unref(L, LUA_REGISTRYINDEX, it->callback);
+                it = events.erase(it);
+            }
+            else it++;
+        }
+    }
 }

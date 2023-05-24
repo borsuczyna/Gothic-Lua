@@ -25,6 +25,7 @@ namespace GOTHIC_ENGINE {
 
 		static int AddEventHandler(lua_State* L);
 		static void TriggerEvent(char* name, LuaEventArguments arguments);
+		static void zLuaEvents::RemoveLuaRefs(lua_State* L);
 
 	private:
 		static bool CompareByPriority(const zLuaEvents::GLuaEvent& event1, const zLuaEvents::GLuaEvent& event2);

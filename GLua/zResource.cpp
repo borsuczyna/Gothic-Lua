@@ -1,18 +1,19 @@
 namespace GOTHIC_ENGINE {
 	zResource::zResource(char* name) {
-		this->name = name;
-		printf("init %s\n", name);
+		this->name = new char[strlen(name) + 1];
+		strcpy(this->name, name);
+		std::string stringName = std::string(name);
 
-		std::filesystem::path cwd = zFileSystem::GetCurrentDirectory() + ("resources\\" + std::string(name) + "\\");
+		std::filesystem::path cwd = zFileSystem::GetCurrentDirectory() + ("resources\\" + stringName + "\\");
 		resourcePath = cwd.string().c_str();
 
 		if (!zFileSystem::DirectoryExists(resourcePath)) {
-			zConsole::Log("Resource '" + std::string(name) + "' does not exist", LogType.Error);
+			zConsole::Log("Resource '" + stringName + "' does not exist", LogType.Error);
 			return;
 		}
 
 		if (!zFileSystem::FileExists(std::string(resourcePath) + "main.lua")) {
-			zConsole::Log("No entry Lua file for resource '" + std::string(name) + "' was found (main.lua)", LogType.Error);
+			zConsole::Log("No entry Lua file for resource '" + stringName + "' was found (main.lua)", LogType.Error);
 			return;
 		}
 
@@ -22,8 +23,12 @@ namespace GOTHIC_ENGINE {
 		this->mainLuaFile.LoadDefaultDefinitions();
 
 		// finish
-		zConsole::Log("Started resource '" + std::string(name) + "'", LogType.Success);
+		zConsole::Log("Started resource '" + stringName + "'", LogType.Success);
 		this->started = true;
+	}
+
+	zResource::~zResource() {
+		delete[] this->name;
 	}
 
 	void zResource::StartLua() {

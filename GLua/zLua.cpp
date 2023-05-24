@@ -35,7 +35,9 @@ namespace GOTHIC_ENGINE {
 	}
 
 	void zLuaScript::CloseState() {
+		zLuaEvents::RemoveLuaRefs(this->L);
 		lua_close(this->L);
+		this->L = nullptr;
 	}
 
 	void zLuaScript::LoadDefaultDefinitions() {
