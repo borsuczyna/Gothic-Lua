@@ -2,12 +2,11 @@ namespace GOTHIC_ENGINE {
 	class zResource {
 	public:
 		zLuaScript mainLuaFile;
-		char* name;
+		std::string name;
 		const char* resourcePath;
 		bool started = false;
 
-		zResource(char* name);
-		~zResource();
+		zResource(std::string name);
 		bool DoesScriptComesFromResource(lua_State* L);
 		void StartLua();
 	};

@@ -4,7 +4,7 @@ namespace GOTHIC_ENGINE {
 		return resource;
 	}
 
-	bool zResourceManager::StartResource(char* name) {
+	bool zResourceManager::StartResource(std::string name) {
 		zResource resource(name);
 		if (resource.started) {
 			Resources().push_back(resource);
@@ -14,10 +14,10 @@ namespace GOTHIC_ENGINE {
 		return resource.started;
 	}
 
-	bool zResourceManager::StopResource(char* name) {
+	bool zResourceManager::StopResource(std::string name) {
 		auto& resources = Resources();
 		for (auto it = resources.begin(); it != resources.end();) {
-			if (strcmp(it->name, name) == 0) {
+			if (it->name == name) {
 				zLuaScript script = it->mainLuaFile;
 				script.CloseState();
 				it = resources.erase(it);
@@ -30,15 +30,15 @@ namespace GOTHIC_ENGINE {
 		return false;
 	}
 
-	bool zResourceManager::RestartResource(char* name) {
+	bool zResourceManager::RestartResource(std::string name) {
 		if (!StopResource(name)) return false;
 		if (!StartResource(name)) return false;
 		return true;
 	}
 
-	bool zResourceManager::IsResourceStarted(char* name) {
+	bool zResourceManager::IsResourceStarted(std::string name) {
 		for (const auto& resource : Resources()) {
-			if (strcmp(resource.name, name) == 0) return true;
+			if (resource.name == name) return true;
 		}
 		return false;
 	}

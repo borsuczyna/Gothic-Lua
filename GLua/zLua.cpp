@@ -23,14 +23,28 @@ namespace GOTHIC_ENGINE {
 	}
 
 	void zLuaScript::DoString(const char* code) {
-		if (luaL_dostring(this->L, code) != LUA_OK) {
-			printf("Error: %s\n", lua_tostring(this->L, -1));
+		if (luaL_loadstring(this->L, code) == LUA_OK) {
+			if (lua_pcall(this->L, 0, 0, 0) != LUA_OK) {
+				printf("Lua error: %s\n", lua_tostring(this->L, -1));
+				lua_pop(this->L, 1);  // Remove the error message from the stack
+			}
+		}
+		else {
+			printf("Error loading Lua string: %s\n", lua_tostring(this->L, -1));
+			lua_pop(this->L, 1);  // Remove the error message from the stack
 		}
 	}
 
 	void zLuaScript::DoFile(const char* file) {
-		if (luaL_dofile(this->L, file) != LUA_OK) {
-			printf("Error: %s\n", lua_tostring(this->L, -1));
+		if (luaL_loadfile(this->L, file) == LUA_OK) {
+			if (lua_pcall(this->L, 0, 0, 0) != LUA_OK) {
+				printf("Lua error: %s\n", lua_tostring(this->L, -1));
+				lua_pop(this->L, 1);  // Remove the error message from the stack
+			}
+		}
+		else {
+			printf("Error loading Lua file: %s\n", lua_tostring(this->L, -1));
+			lua_pop(this->L, 1);  // Remove the error message from the stack
 		}
 	}
 
