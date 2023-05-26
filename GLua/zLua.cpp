@@ -57,6 +57,10 @@ namespace GOTHIC_ENGINE {
 		LoadDefinitions("render", renderLib);
 		AddFunctionDefinition("dxDrawRectangle", zLuaRender::DrawRectangle);
 
+		// Colors
+		AddFunctionDefinition("tocolor", zLuaColor::ToColor);
+		AddFunctionDefinition("fromcolor", zLuaColor::FromColor);
+
 		// Remove for safety reasons
 		RemoveDefinition("os");
 		RemoveDefinition("io");

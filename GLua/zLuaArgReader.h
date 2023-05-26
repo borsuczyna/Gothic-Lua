@@ -50,6 +50,13 @@ namespace GOTHIC_ENGINE {
 			return luaL_ref(L, LUA_REGISTRYINDEX);
 		}
 
+		ImColor ReadColor(int arg) {
+			int rgba = this->ReadInt(arg);
+			int r, g, b, a;
+			zColor::FromColor(rgba, r, g, b, a);
+			return ImColor(r, g, b, a);
+		}
+
 		int ArgCount() {
 			return lua_gettop(L);
 		}

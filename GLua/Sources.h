@@ -14,6 +14,7 @@
 #include "zLuaConsole.cpp"
 #include "zLuaEvents.cpp"
 #include "zLuaCursor.cpp"
+#include "zLuaColor.cpp"
 #include "zLuaRender.cpp"
 #include "zLua.cpp"
 #include "zResource.cpp"

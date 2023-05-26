@@ -993,6 +993,7 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
     <ClCompile Include="ZenGin\Gothic_I_Classic\Globals_G1.cpp" />
     <ClCompile Include="ZenGin\Gothic_I_Classic\Statics_G1.cpp" />
     <ClInclude Include="RenderHook.h" />
+    <ClInclude Include="zColor.h" />
     <ClInclude Include="zConsole.cpp">
       <SubType>
       </SubType>
@@ -1007,6 +1008,11 @@ $(ALLUSERSPROFILE)\Union\SDK\Union\v1.0m\Build\incver.exe $(ProjectDir)</Command
     <ClInclude Include="zKeyboard.h" />
     <ClInclude Include="zLua.h" />
     <ClInclude Include="zLuaArgReader.h" />
+    <ClInclude Include="zLuaColor.h" />
+    <ClInclude Include="zLuaColor.cpp">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="zLuaConsole.h" />
     <ClInclude Include="zLuaCursor.h" />
     <ClInclude Include="zLuaCursor.cpp">

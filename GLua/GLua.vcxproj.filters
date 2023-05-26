@@ -3225,6 +3225,15 @@
     <ClInclude Include="zLuaRender.cpp">
       <Filter>Plugin\Workspace\Plugin\zLua\Render</Filter>
     </ClInclude>
+    <ClInclude Include="zColor.h">
+      <Filter>Plugin\Workspace\Plugin\zRender</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaColor.h">
+      <Filter>Plugin\Workspace\Plugin\zLua\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="zLuaColor.cpp">
+      <Filter>Plugin\Workspace\Plugin\zLua\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".build_settings.inl">
