@@ -95,13 +95,38 @@ namespace GOTHIC_ENGINE {
         Rectangles().push_back(rectangle);
     }
 
-    void zRender::DrawTextElement(char* string, float x, float y, float w, float h, ImColor color) {
+    void zRender::DrawTextElement(char* buffer, float x, float y, float w, float h, ImColor color, int xAlign, int yAlign) {
+        ImVec2 textSize = ImGui::CalcTextSize(buffer);
+        
         Text text;
-        text.text = string;
-        text.x = x;
-        text.y = y;
-        text.w = w;
-        text.h = h;
+        text.text = buffer;
+
+        switch (xAlign) {
+        case 0: // left
+            text.x = x;
+            break;
+        case 1: // center
+            text.x = (x + w / 2) - textSize.x / 2;
+            break;
+        case 2: // right
+            text.x = (x + w) - textSize.x;
+            break;
+        }
+
+        switch (yAlign) {
+        case 0: // top
+            text.y = y;
+            break;
+        case 1: // center
+            text.y = (y + h / 2) - textSize.y / 2;
+            break;
+        case 2: // bottom
+            text.y = (y + h) - textSize.y;
+            break;
+        }
+
+        text.w = textSize.x;
+        text.h = textSize.y;
         text.color = color;
 
         Texts().push_back(text);
@@ -193,7 +218,7 @@ namespace GOTHIC_ENGINE {
         sprintf_s(buffer, 256, "Gothic : GLua %s build %s %s", CURRENT_VERSION, __DATE__, __TIME__);
         ImVec2 textSize = ImGui::CalcTextSize(buffer);
 
-        zRender::DrawTextElement(buffer, width - textSize.x - 4, height - textSize.y - 4, textSize.x, textSize.y);
+        zRender::DrawTextElement(buffer, 0, 0, (float)width, (float)height, ImColor(255, 255, 255), 2, 2);
 
         ImGui::EndFrame();
         ImGui::Render();
